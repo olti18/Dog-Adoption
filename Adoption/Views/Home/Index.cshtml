@@ -1,0 +1,60 @@
+﻿
+
+
+
+
+
+@*@model IEnumerable<Adoption.Models.Dog>
+
+<div class="row pb-3">
+
+    @foreach (var Dog in Model)
+    {
+
+        <div class="col-md-3 col-sm-6">
+            <div class="row p-2">
+                <div class="col-12 p-1">
+                    <div class="card border-0 p-3 rounded" style="box-shadow: 0 0 15px #dddddd">
+                          <img src="@Dog.ImageUrl" class="card-img-top rounded" style="aspect-ratio: 1/1; object-fit:cover" />
+                        <div class="card-body pb-0">
+                            <div class="pl-1">
+                                <p class="card-title h5 text-dark opacity-75 text-uppercase text-center">@Dog.Name</p>
+                            </div>
+                            <div class="pl-1">
+                                <p class="text-dark text-opacity-75 text-center mb-0">
+                                    Breed:
+                                    <span>
+                                        @Dog.Breeds.Name
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="pl-1">
+                                <p class="text-dark text-opacity-75 text-center mb-0">
+                                    Gender:
+                                    <span>
+                                        @Dog.Gender
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div style="padding: 10px">
+                            <a asp-action="Details"
+                               asp-route-id="@Dog.Id"
+                               class="btn btn-primary bg-gradient border-0 form-control">
+                                Show Details
+                            </a>
+                        </div>
+                        <div style="padding: 10px">
+                            <a asp-action="Delete"
+                               asp-route-id="@Dog.Id"
+                               class="btn btn-primary bg-gradient border-0 form-control">
+                                Delete
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>*@
