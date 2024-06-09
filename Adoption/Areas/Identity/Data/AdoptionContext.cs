@@ -16,7 +16,8 @@ public class AdoptionContext : IdentityDbContext<ApplicationUser>
     public DbSet<WishList> WishLists { get; set; }
     public DbSet<Dog>Dogs { get; set; }
     public DbSet<Breed>Breeds { get; set; }
-        
+    public DbSet<Comment> Comments { get; set; }
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);

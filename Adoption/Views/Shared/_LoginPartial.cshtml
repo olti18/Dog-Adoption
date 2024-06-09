@@ -1,13 +1,15 @@
-﻿@using Microsoft.AspNetCore.Identity
+﻿  @using Microsoft.AspNetCore.Identity
 @using Adoption.Areas.Identity.Data
 
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
-<ul class="navbar-nav">
+<ul class="navbar-nav ">
+   
     @if (SignInManager.IsSignedIn(User))
     {
         @if (User.IsInRole("Admin"))
         {
+            
 
             <li class="nav-item">
                 <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
@@ -28,29 +30,18 @@
             <li>
                 <div class="dropdown" style="margin-right:15px">
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dogs
+                        Manage
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" asp-controller="Dogs" asp-action="Create">Create New</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Users
-                    </button>
-                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" asp-controller="Dogs" asp-action="Create">Add Dog</a></li>
                         <li><a class="dropdown-item" asp-controller="Admin" asp-action="ListUsers">Users</a></li>
+                        <li><a class="dropdown-item" asp-controller="Breeds" asp-action="Index">Add Breed</a></li>
+
                     </ul>
                 </div>
             </li>
-            @* <li>
-    <form>
-    <button type="submit" asp-controller="Dogs" class="nav-link btn btn-link text-dark border-0"> Dogs</button>
-
-    </form>
-    </li>*@
+           
+           
         }
 
         else

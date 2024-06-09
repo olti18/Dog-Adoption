@@ -540,3 +540,4 @@ C:\Users\oltib\OneDrive\Desktop\Adoption\Adoption\obj\Debug\net8.0\refint\Adopti
 C:\Users\oltib\OneDrive\Desktop\Adoption\Adoption\obj\Debug\net8.0\Adoption.pdb
 C:\Users\oltib\OneDrive\Desktop\Adoption\Adoption\obj\Debug\net8.0\Adoption.genruntimeconfig.cache
 C:\Users\oltib\OneDrive\Desktop\Adoption\Adoption\obj\Debug\net8.0\ref\Adoption.dll
+C:\Users\oltib\OneDrive\Desktop\Adoption\Adoption\obj\Debug\net8.0\Adoption.sourcelink.json

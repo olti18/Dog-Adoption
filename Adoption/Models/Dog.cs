@@ -27,5 +27,7 @@ namespace Adoption.Models
         [ForeignKey("Breed")]
         public int BreedId { get; set; }
         public Breed Breeds { get; set; }
+        //
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

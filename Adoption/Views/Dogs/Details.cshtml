@@ -1,4 +1,64 @@
-﻿@model Adoption.Models.Dog
+﻿
+@using AdoptionContext.Models
+@using Microsoft.AspNetCore.Identity
+
+@using Adoption.Areas.Identity.Data
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@model DogDetailsViewModel
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>@Model.Dog.Name</h2>
+            <p>Breed: @Model.Dog.Breeds.Name</p>
+            <p>Gender: @Model.Dog.Gender</p>
+            <img src="@Model.Dog.ImageUrl" class="img-fluid" />
+
+            <h3>Comments</h3>
+            @foreach (var comment in Model.Comments)
+            {
+                <div class="comment">
+                    <strong>@comment.User.UserName</strong> @comment.CreatedAt.ToShortDateString()
+                    <p>@comment.Content</p>
+                    @if (User.Identity.IsAuthenticated && (comment.UserId == UserManager.GetUserId(User) || User.IsInRole("Admin")))
+                    {
+                        <form asp-action="DeleteComment" asp-controller="Comments" method="post" style="display:inline">
+                            <input type="hidden" name="commentId" value="@comment.CommentId" />
+                            <button type="submit" class="btn btn-link text-danger">Delete</button>
+                        </form>
+                    }
+                </div>
+            }
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <h3>Add a Comment</h3>
+                <form asp-action="AddComment" asp-controller="Comments" method="post">
+                    <div class="form-group">
+                        <textarea name="content" class="form-control"></textarea>
+                        <input type="hidden" name="dogId" value="@Model.NewComment.DogId" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            }
+            else
+            {
+                <p><a asp-area="Identity" asp-page="/Account/Login">Log in</a> to add a comment.</p>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
+@*@model Adoption.Models.Dog
 
 @{
     ViewData["Title"] = "Details";
@@ -65,3 +125,4 @@
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
+*@

@@ -35,7 +35,26 @@ namespace Adoption.Controllers
         // GET: Dogs/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
+            var dog = await _context.Dogs
+                .Include(d => d.Breeds) // Include the Breed information
+                .Include(d => d.Comments)
+                .ThenInclude(c => c.User)
+                .FirstOrDefaultAsync(d => d.Id == id);
+
+            if (dog == null)
+            {
+                return NotFound();
+            }
+
+            var viewModel = new DogDetailsViewModel
+            {
+                Dog = dog,
+                Comments = dog.Comments.OrderByDescending(c => c.CreatedAt).ToList(),
+                NewComment = new Comment {  DogId = (int)(int?)id }// Cast 'id' to int?
+            };
+
+            return View(viewModel);
+            /*if (id == null)
             {
                 return NotFound();
             }
@@ -48,7 +67,7 @@ namespace Adoption.Controllers
                 return NotFound();
             }
 
-            return View(dog);
+            return View(dog);*/
         }
 
         // GET: Dogs/Create
