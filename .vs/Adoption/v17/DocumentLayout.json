@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\oltib\\OneDrive\\Desktop\\Adoption\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{393745EA-5719-40FC-BEF3-5A4074F577A8}|Adoption\\Adoption.csproj|c:\\users\\oltib\\onedrive\\desktop\\adoption\\adoption\\controllers\\wishlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{393745EA-5719-40FC-BEF3-5A4074F577A8}|Adoption\\Adoption.csproj|solutionrelative:adoption\\controllers\\wishlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{393745EA-5719-40FC-BEF3-5A4074F577A8}|Adoption\\Adoption.csproj|c:\\users\\oltib\\onedrive\\desktop\\adoption\\adoption\\views\\dogs\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{393745EA-5719-40FC-BEF3-5A4074F577A8}|Adoption\\Adoption.csproj|solutionrelative:adoption\\views\\dogs\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{393745EA-5719-40FC-BEF3-5A4074F577A8}|Adoption\\Adoption.csproj|c:\\users\\oltib\\onedrive\\desktop\\adoption\\adoption\\views\\adoptionrequest\\userrequests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{393745EA-5719-40FC-BEF3-5A4074F577A8}|Adoption\\Adoption.csproj|solutionrelative:adoption\\views\\adoptionrequest\\userrequests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "WishListController.cs",
-              "DocumentMoniker": "C:\\Users\\oltib\\OneDrive\\Desktop\\Adoption\\Adoption\\Controllers\\WishListController.cs",
-              "RelativeDocumentMoniker": "Adoption\\Controllers\\WishListController.cs",
-              "ToolTip": "C:\\Users\\oltib\\OneDrive\\Desktop\\Adoption\\Adoption\\Controllers\\WishListController.cs",
-              "RelativeToolTip": "Adoption\\Controllers\\WishListController.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAAAwwBMAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T18:27:31.752Z",
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\oltib\\OneDrive\\Desktop\\Adoption\\Adoption\\Views\\Dogs\\Details.cshtml",
+              "RelativeDocumentMoniker": "Adoption\\Views\\Dogs\\Details.cshtml",
+              "ToolTip": "C:\\Users\\oltib\\OneDrive\\Desktop\\Adoption\\Adoption\\Views\\Dogs\\Details.cshtml",
+              "RelativeToolTip": "Adoption\\Views\\Dogs\\Details.cshtml",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAACwAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-13T22:18:05.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserRequests.cshtml",
+              "DocumentMoniker": "C:\\Users\\oltib\\OneDrive\\Desktop\\Adoption\\Adoption\\Views\\AdoptionRequest\\UserRequests.cshtml",
+              "RelativeDocumentMoniker": "Adoption\\Views\\AdoptionRequest\\UserRequests.cshtml",
+              "ToolTip": "C:\\Users\\oltib\\OneDrive\\Desktop\\Adoption\\Adoption\\Views\\AdoptionRequest\\UserRequests.cshtml",
+              "RelativeToolTip": "Adoption\\Views\\AdoptionRequest\\UserRequests.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-13T22:08:43.581Z",
               "EditorCaption": ""
             }
           ]

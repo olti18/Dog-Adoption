@@ -26,8 +26,15 @@ namespace AdoptionContext.Controllers
             this.userManager = userManager;
         }
 
+        public async Task<IActionResult> Index()
+        {
+            //IEnumerable<AdoptionRequest> adoptionRequests = _context.AdoptionRequests.ToList();
+            var index = await _context.AdoptionRequests.ToListAsync();
+            return View(index);
+        }
         public async Task<IActionResult> ListUsers()
         {
+            IEnumerable<AdoptionRequest> adoptionRequests = _context.AdoptionRequests.ToList();
             var users = await userManager.Users.ToListAsync();
             return View(users);
         }

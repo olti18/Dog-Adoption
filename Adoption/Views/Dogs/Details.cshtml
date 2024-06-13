@@ -43,6 +43,9 @@
                 <div>
                     <a asp-controller="AdoptionRequest" asp-action="Create" asp-route-dogId="@Model.Dog.Id" class="btn btn-success">Adopt Me</a>
                 </div>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="AdoptionRequest" asp-action="UserRequests">My Adoption Requests</a>
+                </li>
             }
             else
             {

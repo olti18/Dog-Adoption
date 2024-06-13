@@ -19,6 +19,26 @@ namespace Adoption.Controllers
             _context = context;
             _userManager = userManager;
         }
+        public async Task<IActionResult> UserRequests()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var adoptionRequests = await _context.AdoptionRequests
+                .Include(ar => ar.Dog)
+                .Where(ar => ar.UserId == user.Id)
+                .ToListAsync();
+
+            var viewModel = new UserAdoptionRequestViewModel
+            {
+                AdoptionRequests = adoptionRequests
+            };
+
+            return View(viewModel);
+        }
 
         [HttpGet]
         public IActionResult Create(int dogId)
@@ -69,6 +89,38 @@ namespace Adoption.Controllers
 
             return View(model);
         }
+
+        // GET: AdoptionRequests/Approve/1
+        public async Task<IActionResult> Approve(int id)
+        {
+            var adoptionRequest = await _context.AdoptionRequests.FindAsync(id);
+            if (adoptionRequest == null)
+            {
+                return NotFound();
+            }
+
+            adoptionRequest.Status = "Approved";
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+            //return RedirectToAction(nameof(Index)); 
+        }
+
+        // GET: AdoptionRequests/Deny/1
+        public async Task<IActionResult> Deny(int id)
+        {
+            var adoptionRequest = await _context.AdoptionRequests.FindAsync(id);
+            if (adoptionRequest == null)
+            {
+                return NotFound();
+            }
+
+            adoptionRequest.Status = "Denied";
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
+
 
         /*[HttpGet]
         public IActionResult Create(int dogId)

@@ -1,0 +1,31 @@
+﻿
+@model UserAdoptionRequestViewModel
+
+<h2>Your Adoption Requests</h2>
+
+@if (Model.AdoptionRequests.Count == 0)
+{
+    <p>You have no adoption requests.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Dog Name</th>
+                <th>Request Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var request in Model.AdoptionRequests)
+            {
+                <tr>
+                    <td>@request.Dog.Name</td>
+                    @* <td>@request.CreatedAt.ToShortDateString()</td> *@
+                    <td>@request.Status</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
