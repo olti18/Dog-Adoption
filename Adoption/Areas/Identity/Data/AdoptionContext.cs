@@ -3,6 +3,7 @@ using Adoption.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore;
 
 namespace Adoption.Data;
 
@@ -17,6 +18,7 @@ public class AdoptionContext : IdentityDbContext<ApplicationUser>
     public DbSet<Dog>Dogs { get; set; }
     public DbSet<Breed>Breeds { get; set; }
     public DbSet<Comment> Comments { get; set; }
+    public DbSet<AdoptionRequest> AdoptionRequests { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

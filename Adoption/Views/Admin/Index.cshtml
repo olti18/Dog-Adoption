@@ -1,0 +1,31 @@
+﻿@*  @model IEnumerable<AdoptionRequest>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Dog</th>
+            <th>User</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var request in Model)
+        {
+            <tr>
+                
+                <td>@request.User.UserName</td>
+                <td>@request.Status</td>
+                <td>
+                    @if (request.Status == "Pending")
+                    {
+                        <a asp-controller="AdoptionRequest" asp-action="ApproveRequest" asp-route-id="@request.Id" class="btn btn-success">Approve</a>
+                        <a asp-controller="AdoptionRequest" asp-action="RejectRequest" asp-route-id="@request.Id" class="btn btn-danger">Reject</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+*@

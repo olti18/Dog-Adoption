@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\oltib\\OneDrive\\Desktop\\Adoption\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{393745EA-5719-40FC-BEF3-5A4074F577A8}|Adoption\\Adoption.csproj|c:\\users\\oltib\\onedrive\\desktop\\adoption\\adoption\\controllers\\commentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{393745EA-5719-40FC-BEF3-5A4074F577A8}|Adoption\\Adoption.csproj|solutionrelative:adoption\\controllers\\commentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{393745EA-5719-40FC-BEF3-5A4074F577A8}|Adoption\\Adoption.csproj|c:\\users\\oltib\\onedrive\\desktop\\adoption\\adoption\\controllers\\wishlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{393745EA-5719-40FC-BEF3-5A4074F577A8}|Adoption\\Adoption.csproj|solutionrelative:adoption\\controllers\\wishlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CommentsController.cs",
-              "DocumentMoniker": "C:\\Users\\oltib\\OneDrive\\Desktop\\Adoption\\Adoption\\Controllers\\CommentsController.cs",
-              "RelativeDocumentMoniker": "Adoption\\Controllers\\CommentsController.cs",
-              "ToolTip": "C:\\Users\\oltib\\OneDrive\\Desktop\\Adoption\\Adoption\\Controllers\\CommentsController.cs",
-              "RelativeToolTip": "Adoption\\Controllers\\CommentsController.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAmwEAAAAAuAAAA",
+              "Title": "WishListController.cs",
+              "DocumentMoniker": "C:\\Users\\oltib\\OneDrive\\Desktop\\Adoption\\Adoption\\Controllers\\WishListController.cs",
+              "RelativeDocumentMoniker": "Adoption\\Controllers\\WishListController.cs",
+              "ToolTip": "C:\\Users\\oltib\\OneDrive\\Desktop\\Adoption\\Adoption\\Controllers\\WishListController.cs",
+              "RelativeToolTip": "Adoption\\Controllers\\WishListController.cs",
+              "ViewState": "AQIAADUAAAAAAAAAAAAwwBMAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-09T21:18:10.8Z",
+              "WhenOpened": "2024-06-13T18:27:31.752Z",
               "EditorCaption": ""
             }
           ]

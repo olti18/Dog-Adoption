@@ -63,11 +63,11 @@
             </li>
             <li>
                 <form>
-                    <button type="submit" asp-controller="Breeds" class="nav-link btn btn-link text-dark border-0"> Breeds</button>
+                    <button type="submit" asp-controller="Breeds"  class="nav-link btn btn-link text-dark border-0"> Breeds</button>
 
                 </form>
             </li>
-            <li>
+            @* <li>
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Dogs
@@ -76,6 +76,12 @@
                         <li><a class="dropdown-item" asp-controller="Dogs" asp-action="Create">Create New</a></li>
                     </ul>
                 </div>
+    </li>*@
+            <li>
+                <form>
+                    <button type="submit" asp-controller="WishList" asp-action="ViewWishList" class="nav-link btn btn-link text-dark border-0"> WishList</button>
+
+                </form>
             </li>
         }
 

@@ -5,17 +5,24 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using Adoption.Areas.Identity.Data;
+using Adoption.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+
 
 namespace AdoptionContext.Controllers
 {
    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
-
+        private readonly Adoption.Data.AdoptionContext _context;
         private readonly UserManager<ApplicationUser> userManager;// Error:I dont have IdentityUser But application User
 
-        public AdminController(UserManager<ApplicationUser> userManager)
+        public AdminController(Adoption.Data.AdoptionContext context, UserManager<ApplicationUser> userManager)
         {
+            _context = context;
             this.userManager = userManager;
         }
 
@@ -88,6 +95,17 @@ namespace AdoptionContext.Controllers
 
             }
         }
+
+      /* public async Task<IActionResult> Index()
+        {
+            var PendingRequests = await _context.AdoptionRequests.
+                Include(r => r.Dog)
+                .Include(r => r.User)
+                .Where(r => r.Status == "Pending")
+                .ToListAsync();
+            return View(PendingRequests);
+        }*/
+
 
     }   
 }

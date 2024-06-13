@@ -220,5 +220,15 @@ namespace Adoption.Controllers
         {
             return _context.Dogs.Any(e => e.Id == id);
         }
+        public async Task<IActionResult> Adopt(int id)
+        {
+            var dog = await _context.Dogs.FindAsync(id);
+            if (dog == null)
+            {
+                return NotFound();
+            }
+
+            return View(dog);
+        }
     }
 }

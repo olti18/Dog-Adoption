@@ -12,9 +12,7 @@ namespace Adoption.Controllers
     {
         private readonly UserManager<ApplicationUser> userManager;
         private readonly Data.AdoptionContext _context;
-
-
-
+        
         public WishListController(Data.AdoptionContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
@@ -113,7 +111,7 @@ namespace Adoption.Controllers
             _context.WishLists.Remove(wishlistItem);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("Index", "Dogs");
+            return RedirectToAction("ViewWishList", "WishList");
         }
         public async Task<IActionResult> ViewWishlist()
         {

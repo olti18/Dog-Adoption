@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "awIz1B/W7MBTy2t53jxIhPF698f2rXW0YOSrj6L+Uco=",
+  "Hash": "y8PGSkoI8OLi2q9PXzFH5Ia5rc4wtxk0F9kFUCDpBDg=",
   "Source": "Adoption",
   "BasePath": "_content/Adoption",
   "Mode": "Default",
@@ -1309,6 +1309,25 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\158beab4-575e-46d3-bb0e-dcc14be888b5.jfif"
     },
     {
+      "Identity": "C:\\Users\\oltib\\OneDrive\\Desktop\\Adoption\\Adoption\\wwwroot\\images\\product\\25be049b-9900-4c5e-b979-6990d960b631.jfif",
+      "SourceId": "Adoption",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\oltib\\OneDrive\\Desktop\\Adoption\\Adoption\\wwwroot\\",
+      "BasePath": "_content/Adoption",
+      "RelativePath": "images/product/25be049b-9900-4c5e-b979-6990d960b631.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\product\\25be049b-9900-4c5e-b979-6990d960b631.jfif"
+    },
+    {
       "Identity": "C:\\Users\\oltib\\OneDrive\\Desktop\\Adoption\\Adoption\\wwwroot\\images\\product\\41220f66-3b37-4df0-87c6-6550f0dfc731.jfif",
       "SourceId": "Adoption",
       "SourceType": "Discovered",
@@ -1326,6 +1345,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\product\\41220f66-3b37-4df0-87c6-6550f0dfc731.jfif"
+    },
+    {
+      "Identity": "C:\\Users\\oltib\\OneDrive\\Desktop\\Adoption\\Adoption\\wwwroot\\images\\product\\4762cec1-972a-4ba5-909d-2d244aff9d87.jfif",
+      "SourceId": "Adoption",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\oltib\\OneDrive\\Desktop\\Adoption\\Adoption\\wwwroot\\",
+      "BasePath": "_content/Adoption",
+      "RelativePath": "images/product/4762cec1-972a-4ba5-909d-2d244aff9d87.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\product\\4762cec1-972a-4ba5-909d-2d244aff9d87.jfif"
     },
     {
       "Identity": "C:\\Users\\oltib\\OneDrive\\Desktop\\Adoption\\Adoption\\wwwroot\\images\\product\\6b60126f-6817-46c8-908a-e58572f5fb1f.jfif",
