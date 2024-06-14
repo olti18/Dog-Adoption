@@ -6,6 +6,89 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+
+<div class="container shadow p-5">
+    <div class="row pb-2">
+        <h2>Adopt a Dog</h2>
+    </div>
+
+    <form method="post" asp-action="Create" enctype="multipart/form-data">
+        <div asp-validation-summary="All"></div>
+
+        <div class="form-row" >
+            <div class="form-group col-md-6">
+                <label asp-for="Name">Employee Name</label>
+                <input type="text" class="form-control mb-3" asp-for="Name" placeholder="Enter Name">
+                <span asp-validation-for="Name" class=" alert-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="Gender">Gender</label>
+                <input type="text" class="form-control mb-3" asp-items="Html.GetEnumSelectList<Gender>()" asp-for="Gender" placeholder="Enter Gender">
+                <span asp-validation-for="Gender" class=" alert-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="Age">Age</label>
+                <input type="text" class="form-control mb-3" asp-for="Age" placeholder="Enter Age">
+                <span asp-validation-for="Age" class=" alert-danger"></span>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label asp-for="Color">Color</label>
+                <input type="Text" class="form-control" asp-for="Color">
+                <span asp-validation-for="Color" class=" alert-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="Weight">Weight</label>
+                <input type="text" class="form-control mb-3" asp-for="Weight" placeholder="Enter Weight">
+                <span asp-validation-for="Weight" class=" alert-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="ImageUrl">ImageUrl</label>
+                <input type="file" name="file" class="form-control mb-3" asp-for="ImageUrl" placeholder="Enter ImageUrl">
+                <span asp-validation-for="ImageUrl" class=" alert-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6 mb-3">
+                <label asp-for="BreedId">Color</label>
+                <select asp-for="BreedId" class="form-control" asp-items="ViewBag.BreedId"></select>
+                <span asp-validation-for="BreedId" class=" alert-danger"></span>
+            </div>
+        </div>
+
+
+        <input type="submit" value="Create" class="btn btn-primary" />
+        <button type="submit" class="btn btn-lg btn-primary p-2"><i class="bi bi-file-plus-fill"></i>Save</button>
+        @*  <a asp-controller="Dogs" asp-action="Index" class="btn btn-lg btn-warning p-2">Back To List</a>*@
+    </form>
+
+</div>
+
+
+@*//for front end validations*@
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
+
+
+
+
+
+
+
+
+@* 
 <h1>Create</h1>
 
 <h4>Dog</h4>
@@ -67,3 +150,4 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+*@

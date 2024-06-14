@@ -5,10 +5,64 @@
     ViewData["Title"] = "My Wishlist";
 }
 
-<h1>@ViewData["Title"]</h1>
+@* <h1>@ViewData["Title"]</h1>*@
+
+@if(Model == null || !Model.Any())
+{
+    <p>Your wishlist is empty.</p>
+}
+else
+{
+    <div class="container shadow p-5">
+
+        <h1 class="text-center mb-3">Wishlist</h1>
+
+        <div class="col mb-3">
+            <a><i class="bi bi-file-plus-fill"></i>WishList</a>
+        </div>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Photo</th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td width="20%">
+                            @item.Dog.Name
+                        </td>
+                        <td width="20%">
+                            @item.Dog.Color
+                        </td>
+                        <td width="25%">
+                            @item.Dog.Age
+                        </td>
+                        <td><img src="@item.Dog.ImageUrl" class="card-img-top rounded" style="aspect-ratio: 1/1; object-fit:cover;width:50px;height:50px" /></td>
+                        <td>
+                        <td>
+                            <div role="group" class="w-60 btn-group">
+                                <a asp-action="DeleteFromWishlist" asp-route-dogId="@item.DogId" class=" btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i>Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+}
 
 
-@if (Model == null || !Model.Any())
+
+@*  @if (Model == null || !Model.Any())
 {
     <p>Your wishlist is empty.</p>
 }
@@ -21,7 +75,7 @@ else
                     <th>Dog Name</th>
                     <th>Color</th>
                     <th>Age</th>
-                    @*<th>Quanity</th>*@
+                    
                     <th>Photo</th>
                     <th>Remove Dogs</th>
                 </tr>
@@ -34,9 +88,9 @@ else
                         <td>@item.Dog.Color</td>
                         <td>@item.Dog.Age</td>
                         
-                        @*<td>@item.Quantity</td>*@
+                        
                         <td><img src="@item.Dog.ImageUrl" class="card-img-top rounded" style="aspect-ratio: 1/1; object-fit:cover;width:50px;height:50px" /></td>
-                        @*<td>@item.Dog.ImageUrl</td>*@
+                        
                         <td>
                             <a asp-action="DeleteFromWishlist" asp-route-dogId="@item.DogId" class="btn btn-danger btn-sm">Remove</a>
                         </td>
@@ -45,4 +99,4 @@ else
             </tbody>
         </table>
     </div>
-}
+}*@

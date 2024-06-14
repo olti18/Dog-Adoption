@@ -5,7 +5,49 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Delete</h1>
+
+
+<div class="container shadow p-5">
+    <div class="row pb-2">
+        <h2>Delete Employee</h2>
+    </div>
+
+    <form method="post" asp-action="DeleteEmp">
+        <input asp-for="Id" hidden />
+        <div asp-validation-summary="All"></div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="Name">Employee Name</label>
+                <input type="text" class="form-control mb-3" asp-for="Name" disabled>
+                <span asp-validation-for="Name" class=" alert-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="Description">Description</label>
+                <input type="text" class="form-control mb-3" asp-for="Description" disabled>
+                <span asp-validation-for="Description" class=" alert-danger"></span>
+            </div>
+        </div>
+
+
+        <button type="submit" class="btn btn-lg btn-danger p-2"><i class="bi bi-trash-fill"></i>Delete</button>
+        <a asp-controller="Employee" asp-action="Index" class="btn btn-lg btn-warning p-2">Back To List</a>
+    </form>
+
+</div>
+
+
+@*//for front end validations*@
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
+
+
+@* <h1>Delete</h1>
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
@@ -32,3 +74,4 @@
         <a asp-action="Index">Back to List</a>
     </form>
 </div>
+*@

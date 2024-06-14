@@ -5,7 +5,56 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+
+<div class="container shadow p-5">
+
+    <h1 class="text-center mb-3">Manage Breeds</h1>
+
+    <div class="col mb-3">
+        <a asp-controller="Breeds" asp-action="Create" class="btn btn-lg btn-primary"><i class="bi bi-file-plus-fill"></i>Add Breed</a>
+    </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+               @* <th scope="col">Address</th>
+                <th scope="col">CreatedOn</th>*@
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td width="20%">
+                        @item.Name
+                    </td>
+                    <td width="20%">
+                        @item.Description
+                    </td>
+                    <td width="25%">
+                        
+                    </td>
+                    <td width="20%">
+                        
+                </td>
+                    <td>
+                        <div role="group" class="w-60 btn-group">
+                            <a asp-controller="Breeds" asp-action="Edit" asp-route-id="@item.Id" class=" btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i>Edit</a>&nbsp;
+                            <a asp-controller="Breeds" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger"><i class="bi bi-trash-fill"></i>Delete</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+@*<h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -40,3 +89,4 @@
 }
     </tbody>
 </table>
+*@
