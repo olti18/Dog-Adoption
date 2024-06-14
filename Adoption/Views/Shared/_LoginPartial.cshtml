@@ -54,6 +54,7 @@
 
         else
         {
+
             <li class="nav-item">
                 <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
             </li>
@@ -74,6 +75,12 @@
                     <button type="submit" asp-controller="Breeds"  class="nav-link btn btn-link text-dark border-0"> Breeds</button>
 
                 </form>
+            </li>
+            
+
+            <li>
+                <button type="submit" asp-controller="AdoptionRequest" asp-action="UserRequests" class="nav-link btn btn-link text-dark border-0">Adoption Requests</button>
+                @* <a class="nav-link" asp-controller="AdoptionRequest" asp-action="UserRequests">My Adoption Requests</a>*@
             </li>
             @* <li>
                 <div class="dropdown">

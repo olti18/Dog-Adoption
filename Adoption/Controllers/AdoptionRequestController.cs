@@ -83,7 +83,7 @@ namespace Adoption.Controllers
 
                 _context.AdoptionRequests.Add(adoptionRequest);
                 await _context.SaveChangesAsync();
-
+                TempData["success"] = "Adoption Request has been saved wait for admin approv";
                 return RedirectToAction("Details", "Dogs", new { id = model.DogId });
             }
 
@@ -101,6 +101,7 @@ namespace Adoption.Controllers
 
             adoptionRequest.Status = "Approved";
             await _context.SaveChangesAsync();
+            TempData["success"] = "Adoption Request has been approved";
 
             return RedirectToAction(nameof(Index));
             //return RedirectToAction(nameof(Index)); 
@@ -117,6 +118,7 @@ namespace Adoption.Controllers
 
             adoptionRequest.Status = "Denied";
             await _context.SaveChangesAsync();
+            TempData["success"] = "Adoption Request has been Denied";
 
             return RedirectToAction(nameof(Index));
         }

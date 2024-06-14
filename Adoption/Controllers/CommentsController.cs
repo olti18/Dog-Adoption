@@ -44,7 +44,7 @@ namespace Adoption.Controllers
 
             _context.Comments.Add(comment);
             await _context.SaveChangesAsync();
-
+            TempData["success"] = "Comment added Successfully";
             return RedirectToAction("Details", "Dogs", new { id = dogId });
         }
 
@@ -68,7 +68,7 @@ namespace Adoption.Controllers
 
             _context.Comments.Remove(comment);
             await _context.SaveChangesAsync();
-
+            TempData["Success"] = "The Comment has been deleted";
             return RedirectToAction("Details", "Dogs", new { id = comment.DogId });
         }
     }

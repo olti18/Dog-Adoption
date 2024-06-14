@@ -68,6 +68,7 @@ namespace Adoption.Controllers
                 }
 
                 await _context.SaveChangesAsync();
+                TempData["success"] = "Item has been added to Favorite Successfully";
             }
             catch (DbUpdateException dbEx)
             {
@@ -110,7 +111,7 @@ namespace Adoption.Controllers
 
             _context.WishLists.Remove(wishlistItem);
             await _context.SaveChangesAsync();
-
+            TempData["success"] = "item has been removed from wishlist Successfully";
             return RedirectToAction("ViewWishList", "WishList");
         }
         public async Task<IActionResult> ViewWishlist()

@@ -114,13 +114,16 @@ namespace Adoption.Controllers
 
                     _context.Add(dog);
                     await _context.SaveChangesAsync();
+                    TempData["success"] = "Dog added Successfully";
                     return RedirectToAction(nameof(Index));
+                    
 
                 }
             }
             catch
             {
                 ViewData["BreedId"] = new SelectList(_context.Breeds, "Id", "Description", dog.BreedId);
+                TempData["error"] = "Dog cannot been added";
                 return View(dog);
             }
             return View(dog);
@@ -188,6 +191,7 @@ namespace Adoption.Controllers
             }
 
             var dog = await _context.Dogs
+                .Include(navigationPropertyPath: d => d.AdoptionRequests)
                 .Include(d => d.Breeds)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (dog == null)
@@ -208,8 +212,12 @@ namespace Adoption.Controllers
             //{
                 _context.Dogs.Remove(dog);
             //}
+            // added to remove wishList
             var wishLists = await _context.WishLists.Where(w => w.DogId == id).ToListAsync();
             _context.WishLists.RemoveRange(wishLists);
+            // added to remove adoption request beacuse error with foreign key
+            var adoptionRequest = await _context.AdoptionRequests.Where(w => w.DogId == id).ToListAsync();
+            _context.AdoptionRequests.RemoveRange(adoptionRequest);
 
             _context.Dogs.Remove(dog);
             await _context.SaveChangesAsync();

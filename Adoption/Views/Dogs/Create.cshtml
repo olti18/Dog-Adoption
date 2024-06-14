@@ -1,11 +1,10 @@
 ﻿@using AdoptionContext.Models
 @model Adoption.Models.Dog
-
+<partial name="_Notification" />
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 
 
 <div class="container shadow p-5">
@@ -24,7 +23,7 @@
             </div>
             <div class="form-group col-md-6">
                 <label asp-for="Gender">Gender</label>
-                <input type="text" class="form-control mb-3" asp-items="Html.GetEnumSelectList<Gender>()" asp-for="Gender" placeholder="Enter Gender">
+                <select  class="form-control mb-3" asp-items="Html.GetEnumSelectList<Gender>()" asp-for="Gender" placeholder="Enter Gender"></Select>
                 <span asp-validation-for="Gender" class=" alert-danger"></span>
             </div>
         </div>
@@ -56,8 +55,13 @@
         </div>
 
         <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="Height">Height</label>
+                <input type="text" class="form-control mb-3" asp-for="Height" placeholder="Enter Weight">
+                <span asp-validation-for="Height" class=" alert-danger"></span>
+            </div>
             <div class="form-group col-md-6 mb-3">
-                <label asp-for="BreedId">Color</label>
+                <label asp-for="BreedId">Breed</label>
                 <select asp-for="BreedId" class="form-control" asp-items="ViewBag.BreedId"></select>
                 <span asp-validation-for="BreedId" class=" alert-danger"></span>
             </div>

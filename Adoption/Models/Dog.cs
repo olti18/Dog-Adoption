@@ -20,8 +20,8 @@ namespace Adoption.Models
         [Required]
         public double Height { get; set; }
         [Required]
-        public string ImageUrl {  get; set; }
-      
+        public string ImageUrl { get; set; }
+
 
         //All Foreign KEYS
         [ForeignKey("Breed")]
@@ -29,5 +29,6 @@ namespace Adoption.Models
         public Breed Breeds { get; set; }
         //
         public virtual ICollection<Comment> Comments { get; set; }
+        public ICollection<AdoptionRequest> AdoptionRequests { get; set; }
     }
 }

@@ -47,6 +47,8 @@ namespace AdoptionContext.Controllers
                 return NotFound();
             }
             await userManager.DeleteAsync(user);
+            TempData["success"] = "User has been deleted";
+
             return RedirectToAction("ListUsers");//ig we type return View("ListUsers"); Error While Deleting
         }
         [HttpGet]
@@ -91,6 +93,8 @@ namespace AdoptionContext.Controllers
                 user.LastName = model.LastName;
                 
                 var result = await userManager.UpdateAsync(user);
+                TempData["success"] = "User has been Edited";
+
 
                 if (result.Succeeded)
                 {
